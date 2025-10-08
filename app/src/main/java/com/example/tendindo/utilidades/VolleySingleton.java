@@ -944,16 +944,119 @@ public class VolleySingleton {
         static final List<DBMessage> mensajes = Collections.synchronizedList(new ArrayList<>());
         // colaboradores: relación ced_colaborador <-> idProyecto
         static final Set<String> colaboradores = Collections.synchronizedSet(new HashSet<>());
+        static final List<DBMeeting> reuniones = Collections.synchronizedList(new ArrayList<>());
 
         // id autoincrementales (stringificadas al exponer)
         static int nextProyectoId = 1;
         static int nextTareaId = 1;
+        static int nextReunionId = 1;
 
         static boolean seeded = false;
         static synchronized void seedOnce() {
             if (seeded) return;
-            // Usuario demo para probar login
-            usuarios.add(new DBUser("Demo User", "demo@tec.cr", "101010101", "8888-8888", "IT", "1234"));
+
+            // --- Usuarios (con password interno en DBUser) ---
+            DBUser u1 = new DBUser("Demo User", "demo@tec.cr", "101010101", "8888-8888", "IT", "1234");
+            DBUser u2 = new DBUser("Ana Pérez", "ana@empresa.com", "202020202", "7000-1111", "Finanzas", "passana");
+            DBUser u3 = new DBUser("Carlos Ruiz", "carlos@empresa.com", "303030303", "7000-2222", "Ventas", "passcarlos");
+
+            usuarios.add(u1);
+            usuarios.add(u2);
+            usuarios.add(u3);
+
+            // --- Proyectos (IDs autoincrementales locales) ---
+            String p1Id = genProyectoId();
+            String p2Id = genProyectoId();
+
+            DBProject p1 = new DBProject(
+                    p1Id,
+                    "App Móvil Inventarios",
+                    "Aplicación para gestión de inventarios en bodega",
+                    "2025-09-01",
+                    "0",               // estado
+                    u1.cedula,         // responsable
+                    "15000000",
+                    "2 Android devs; 1 QA"
+            );
+
+            DBProject p2 = new DBProject(
+                    p2Id,
+                    "Portal de Reportes",
+                    "Portal web para reportes ejecutivos mensuales",
+                    "2025-08-15",
+                    "1",
+                    u2.cedula,
+                    "10000000",
+                    "Frontend + Backend + BI"
+            );
+
+            proyectos.add(p1);
+            proyectos.add(p2);
+
+            // --- Colaboradores (join cedula::idProyecto) ---
+            colaboradores.add(u1.cedula + "::" + p1Id); // demo en proyecto 1
+            colaboradores.add(u2.cedula + "::" + p1Id); // ana también en proyecto 1
+            colaboradores.add(u2.cedula + "::" + p2Id); // ana en proyecto 2
+            colaboradores.add(u3.cedula + "::" + p2Id); // carlos en proyecto 2
+
+            String t1Id = genTareaId();
+            DBTask t1 = new DBTask(t1Id, "Login y sesiones", "Implementar login y refresh tokens",
+                    "3", "2025-09-02", "12", "En progreso", "5", u1.cedula, p1Id);
+
+            String t2Id = genTareaId();
+            DBTask t2 = new DBTask(t2Id, "Sincronización offline", "Colas y reintentos",
+                    "4", "2025-09-05", "20", "Por hacer", "8", u2.cedula, p1Id);
+
+            String t5Id = genTareaId();
+            DBTask t5 = new DBTask(t5Id, "Diseño UI", "Prototipo en Figma y revisión con el cliente",
+                    "2", "2025-09-01", "10", "Finalizada", "3", u1.cedula, p1Id);
+
+            String t6Id = genTareaId();
+            DBTask t6 = new DBTask(t6Id, "Integración API", "Conectar backend con módulos de inventario",
+                    "5", "2025-09-06", "16", "En progreso", "6", u2.cedula, p1Id);
+
+            String t7Id = genTareaId();
+            DBTask t7 = new DBTask(t7Id, "Notificaciones push", "Implementar Firebase Cloud Messaging",
+                    "3", "2025-09-08", "12", "Por hacer", "5", u3.cedula, p1Id);
+
+            String t8Id = genTareaId();
+            DBTask t8 = new DBTask(t8Id, "Testing unitario", "Casos de prueba para controladores",
+                    "4", "2025-09-10", "18", "En progreso", "7", u1.cedula, p1Id);
+
+            String t9Id = genTareaId();
+            DBTask t9 = new DBTask(t9Id, "Optimización UI", "Reducir tiempos de carga y mejorar UX",
+                    "2", "2025-09-12", "8", "Finalizada", "4", u2.cedula, p1Id);
+
+            // --- Tareas para p2 ---
+            String t3Id = genTareaId();
+            DBTask t3 = new DBTask(t3Id, "Dashboard KPI", "Gráficos y filtros",
+                    "5", "2025-08-16", "15", "Finalizada", "8", u2.cedula, p2Id);
+
+            String t4Id = genTareaId();
+            DBTask t4 = new DBTask(t4Id, "Exportar a PDF", "Plantillas y branding",
+                    "2", "2025-08-20", "10", "Finalizada", "3", u3.cedula, p2Id);
+
+            // --- Agregar todas ---
+            tareas.add(t1);
+            tareas.add(t2);
+            tareas.add(t3);
+            tareas.add(t4);
+            tareas.add(t5);
+            tareas.add(t6);
+            tareas.add(t7);
+            tareas.add(t8);
+            tareas.add(t9);
+
+            // --- Mensajes por proyecto ---
+            mensajes.add(new DBMessage("Hola equipo, revisen los requisitos en Drive.", "Ana Pérez", p1Id));
+            mensajes.add(new DBMessage("Subí el primer prototipo del login.", "Demo User", p1Id));
+            mensajes.add(new DBMessage("KPIs validados con dirección.", "Carlos Ruiz", p2Id));
+            mensajes.add(new DBMessage("Se aprobó el export a PDF ✔", "Ana Pérez", p2Id));
+
+            // --- (Opcional) Reuniones demo ---
+            reuniones.add(new DBMeeting(genReunionId(), "Kickoff inventarios", "2025-09-03 10:00", "Zoom", p1Id));
+            reuniones.add(new DBMeeting(genReunionId(), "Revisión KPIs", "2025-08-18 14:30", "Teams", p2Id));
+
             seeded = true;
         }
 
@@ -962,6 +1065,10 @@ public class VolleySingleton {
         }
         static synchronized String genTareaId() {
             return String.valueOf(nextTareaId++);
+        }
+
+        static synchronized String genReunionId() {
+            return String.valueOf(nextReunionId++);
         }
 
         static DBUser findUserByCorreo(String correo) {
@@ -1061,6 +1168,16 @@ public class VolleySingleton {
         DBMessage(String mensaje, String nombreColaborador, String idProyecto) {
             this.mensaje = mensaje;
             this.nombreColaborador = nombreColaborador;
+            this.idProyecto = idProyecto;
+        }
+    }
+    private static final class DBMeeting {
+        String id, tema, fecha, medio, idProyecto;
+        DBMeeting(String id, String tema, String fecha, String medio, String idProyecto) {
+            this.id = id;
+            this.tema = tema;
+            this.fecha = fecha;
+            this.medio = medio;
             this.idProyecto = idProyecto;
         }
     }
@@ -1425,12 +1542,7 @@ public class VolleySingleton {
 
     // ====== Converters from DB models to APP models (returned via callbacks) ======
     private Usuario toAppUsuario(DBUser d) {
-        // Devuelve SOLO los campos que tu app conoce (sin password)
         return new Usuario(d.nombre, d.correo, d.cedula, d.telefono, d.departamento, d.password);
-        // Si tu Usuario tiene un constructor vacío y campos públicos,
-        // podrías hacer:
-        // Usuario u = new Usuario();
-        // u.nombre = d.nombre; u.correo = d.correo; ...; return u;
     }
     private Proyecto toAppProyecto(DBProject d) {
         return new Proyecto(d.idProyecto, d.nombre_proyecto, d.descripcion, d.fechaInicio, d.estado, d.ced_responsable, d.presupuesto, d.recursosNecesarios);
