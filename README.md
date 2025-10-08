@@ -28,7 +28,7 @@ Está diseñada para su uso en Android y simula todas las operaciones CRUD de ma
 - Iniciar sesión con correo y contraseña.
 - Registrar nuevos usuarios.
 
-<img width="720" height="1600" alt="image" src="https://github.com/user-attachments/assets/93603d52-f381-468d-926e-69ed15c97253" />
+<img width="50%" alt="image" src="https://github.com/user-attachments/assets/93603d52-f381-468d-926e-69ed15c97253" />
 
 
 ---
@@ -39,8 +39,8 @@ Está diseñada para su uso en Android y simula todas las operaciones CRUD de ma
 - Acceder a la información detallada de cada proyecto.
 - Crear un nuevo proyecto.
 
-<img width="720" height="1600" alt="image" src="https://github.com/user-attachments/assets/eeaf2e3f-2a42-460c-845a-4fd00fb7de08" />
-<img width="720" height="1600" alt="image" src="https://github.com/user-attachments/assets/e81ef991-eb76-4f81-9c13-21d74ca95721" />
+<img width="50%" alt="image" src="https://github.com/user-attachments/assets/eeaf2e3f-2a42-460c-845a-4fd00fb7de08" />
+<img width="50%" alt="image" src="https://github.com/user-attachments/assets/e81ef991-eb76-4f81-9c13-21d74ca95721" />
 
 
 ---
@@ -50,7 +50,7 @@ Está diseñada para su uso en Android y simula todas las operaciones CRUD de ma
 - Ver los datos generales del proyecto (nombre, descripción, responsable, presupuesto, recursos, estado).
 - Navegar hacia la lista de tareas, colaboradores, reuniones o foro del proyecto.
 
-<img width="720" height="1600" alt="image" src="https://github.com/user-attachments/assets/e7a2a798-6bb1-46d6-b500-42288cdf0f2b" />
+<img width="50%" alt="image" src="https://github.com/user-attachments/assets/e7a2a798-6bb1-46d6-b500-42288cdf0f2b" />
 
 
 ---
@@ -61,7 +61,7 @@ Está diseñada para su uso en Android y simula todas las operaciones CRUD de ma
 - Crear nuevas tareas o modificar existentes.
 - Editar detalles como tiempo estimado, recursos, storypoints o responsable.
 
-<img width="720" height="1600" alt="image" src="https://github.com/user-attachments/assets/8fc51e18-a38d-4337-b231-68d4805fd1a4" />
+<img width="50%" alt="image" src="https://github.com/user-attachments/assets/8fc51e18-a38d-4337-b231-68d4805fd1a4" />
 
 
 ---
@@ -71,7 +71,7 @@ Está diseñada para su uso en Android y simula todas las operaciones CRUD de ma
 - Ver los colaboradores asociados al proyecto.
 - Agregar o eliminar colaboradores según su cédula o correo.
 
-<img width="720" height="1600" alt="image" src="https://github.com/user-attachments/assets/a30c4205-4b68-40a4-94bb-9527a837bfc6" />
+<img width="50%" alt="image" src="https://github.com/user-attachments/assets/a30c4205-4b68-40a4-94bb-9527a837bfc6" />
 
 
 ---
@@ -81,7 +81,7 @@ Está diseñada para su uso en Android y simula todas las operaciones CRUD de ma
 - Publicar y leer mensajes asociados al proyecto actual.
 - Permite comunicación simple entre miembros del equipo.
 
-<img width="720" height="1600" alt="image" src="https://github.com/user-attachments/assets/140a8ce9-6983-4f6d-81b4-067071e53334" />
+<img width="50%" alt="image" src="https://github.com/user-attachments/assets/140a8ce9-6983-4f6d-81b4-067071e53334" />
 
 
 ---
