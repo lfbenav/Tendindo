@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Usuario">
+        <menu>
+            <item android:id="@+id/nav_item_perfil"
+                android:title="Perfil" />
+            <item android:id="@+id/nav_item_refrescar"
+                android:title="Refrescar Proyectos" />
+            <item android:id="@+id/nav_item_cerrar_sesion"
+                android:title="Cerrar Sesión" />
+        </menu>
+    </item>
+
+    <item android:title="Proyectos">
+        <menu>
+            <item android:id="@+id/nav_item_crear_proytecto"
+                android:title="Crear Proyecto" />
+            <item android:id="@+id/nav_item_informes"
+                android:title="Informes" />
+        </menu>
+    </item>
+
+</menu>

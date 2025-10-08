@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CrearReunionActivity"
+    android:background="#CCFFFA">
+
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginLeft="-100dp"
+        android:layout_marginTop="-100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="-100dp"
+        app:srcCompat="@drawable/manchas2" />
+
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="-100dp"
+        android:layout_marginBottom="50dp"
+        app:srcCompat="@drawable/manchas2" />
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginLeft="-70dp"
+        android:layout_marginTop="600dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="-50dp"
+        app:srcCompat="@drawable/manchas1" />
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginLeft="-100dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="100dp"
+        app:srcCompat="@drawable/manchas3" />
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginRight="-100dp"
+        android:layout_marginBottom="-100dp"
+        app:srcCompat="@drawable/manchas3" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="300sp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/insertar_datos_border"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="serif"
+            android:text="Nueva Reunión"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/campo_tema"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="25dp"
+            android:hint="Tema"
+            android:inputType="text"
+            android:textSize="15sp" />
+
+
+        <EditText
+            android:id="@+id/campo_medio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="25dp"
+            android:hint="Medio"
+            android:inputType="text"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/campo_fecha"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:enabled="false"
+                android:hint="Fecha"
+                android:inputType="date"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/boton_fecha"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginRight="25dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:text="Seleccionar"
+                android:textAlignment="center"
+                android:textColor="#65ECFF" />
+        </LinearLayout>
+
+
+        <EditText
+            android:id="@+id/campo_hora"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="25dp"
+            android:hint="Hora"
+            android:inputType="text"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/campo_invitados"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="25dp"
+            android:hint="Colaboradores invitados (cedulas)"
+            android:inputType="text"
+            android:textSize="15sp" />
+
+
+        <Button
+            android:id="@+id/boton_crear"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="90dp"
+            android:background="@drawable/boton_celeste"
+            android:text="Confirmar" />
+
+        <Button
+            android:id="@+id/boton_cancelar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="15dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:backgroundTintMode="add"
+            android:text="Cancelar"
+            android:textAlignment="center"
+            android:textColor="#65ECFF"
+            android:textSize="13dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

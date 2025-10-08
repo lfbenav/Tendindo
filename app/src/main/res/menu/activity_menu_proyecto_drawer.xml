@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Proyecto">
+        <menu>
+            <item android:id="@+id/nav_item_colaboradores"
+                android:title="Colaboradores" />
+            <item android:id="@+id/nav_item_informe"
+                android:title="Informe de gastos" />
+            <item android:id="@+id/nav_item_foro"
+                android:title="Foro de Consultas" />
+        </menu>
+    </item>
+
+    <item android:title="Tareas">
+        <menu>
+            <item android:id="@+id/nav_item_ver_tareas"
+                android:title="Ver Tareas" />
+            <item android:id="@+id/nav_item_crear_tarea"
+                android:title="Crear Tarea" />
+        </menu>
+    </item>
+
+    <item android:title="Reuniones">
+        <menu>
+            <item android:id="@+id/nav_item_crear_reunion"
+                android:title="Programar Reunión" />
+        </menu>
+    </item>
+
+</menu>

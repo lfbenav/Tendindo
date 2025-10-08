@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Tendindo"
+        tools:targetApi="31">
+        <activity
+            android:name=".InformeProyectoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".InformeGeneralActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ForoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DescripcionReunionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CrearReunionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ModificarTareaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MenuColaboradoresActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DescripcionTareaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MenuTareasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CrearTareaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ModificarPerfilActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VerPerfilActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CrearProyectoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DescripcionProyectoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MenuPrincipalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignInActivity"
+            android:exported="false" /> <!-- android:launchMode="singleInstance" -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
